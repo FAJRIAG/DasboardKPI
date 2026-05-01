@@ -101,6 +101,42 @@ button, select, input {
   transition: transform var(--transition);
 }
 
+.sidebar-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 35;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.sidebar-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+@media (min-width: 769px) {
+  .sidebar-overlay {
+    display: none !important;
+  }
+}
+
+.close-sidebar {
+  display: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  background: transparent;
+  border: none;
+}
+@media (max-width: 768px) {
+  .close-sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .sidebar-header {
   height: var(--header-height);
   display: flex;

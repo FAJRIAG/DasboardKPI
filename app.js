@@ -48,6 +48,8 @@ function switchPage(pageId) {
   
   if (window.innerWidth <= 768) {
     document.getElementById('sidebar').classList.remove('open');
+    const overlay = document.getElementById('sidebarOverlay');
+    if(overlay) overlay.classList.remove('show');
   }
   
   // Resize charts to fix display issues when switching tabs
@@ -58,6 +60,8 @@ function switchPage(pageId) {
 
 function toggleSidebar() {
   document.getElementById('sidebar').classList.toggle('open');
+  const overlay = document.getElementById('sidebarOverlay');
+  if(overlay) overlay.classList.toggle('show');
 }
 
 // Initialize date
