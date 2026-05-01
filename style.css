@@ -220,6 +220,7 @@ button, select, input {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-width: 0;
 }
 
 .top-header {
@@ -323,6 +324,8 @@ button, select, input {
   flex-direction: column;
   gap: 24px;
   animation: fadeIn 0.3s ease-out;
+  min-width: 0;
+  width: 100%;
 }
 
 .view-container.active {
@@ -437,6 +440,9 @@ button, select, input {
   display: flex;
   flex-direction: column;
   box-shadow: var(--shadow-sm);
+  min-width: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .panel-header {
@@ -479,6 +485,7 @@ button, select, input {
   flex: 1;
   min-height: 300px;
   width: 100%;
+  min-width: 0;
 }
 
 .chart-container.tall {
@@ -730,6 +737,8 @@ button, select, input {
   .view-container {
     padding: 16px;
     gap: 16px;
+    width: 100%;
+    max-width: 100vw;
   }
   .top-header {
     height: auto;
@@ -761,13 +770,18 @@ button, select, input {
   .metrics-grid {
     grid-template-columns: 1fr;
   }
+  .panel {
+    padding: 16px;
+    border-radius: var(--radius-lg);
+  }
   .panel-header {
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
   }
   .panel-header > div {
     width: 100%;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
   }
   .search-input {
     width: 100%;
